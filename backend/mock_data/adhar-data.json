@@ -1,0 +1,79 @@
+{
+  "records": [
+    {
+      "status": "VALID",
+      "referenceId": "txn_836491205374",
+      "data": {
+        "fullName": "Rajesh Kumar",
+        "dob": "1984-02-11",
+        "gender": "M",
+        "address": "Plot 42, Shanti Vihar Colony, Patia, Bhubaneswar, Odisha",
+        "pincode": "751024",
+        "careOf": "S/o Ramesh Kumar",
+        "photo": "base64string_placeholder"
+      },
+      "message": "Aadhaar details successfully verified",
+      "aadhaarNumber": "836491205374"
+    },
+    {
+      "status": "VALID",
+      "referenceId": "txn_594720183645",
+      "data": {
+        "fullName": "Ananya Sharma",
+        "dob": "1992-09-15",
+        "gender": "F",
+        "address": "House No. 108, Lakshmi Enclave, Koramangala, Bengaluru, Karnataka",
+        "pincode": "560034",
+        "careOf": "D/o Manish Sharma",
+        "photo": "base64string_placeholder"
+      },
+      "message": "Aadhaar details successfully verified",
+      "aadhaarNumber": "594720183645"
+    },
+    {
+      "status": "VALID",
+      "referenceId": "txn_672843190257",
+      "data": {
+        "fullName": "Suresh Patil",
+        "dob": "1978-11-03",
+        "gender": "M",
+        "address": "Near Ganesh Temple, Shivaji Nagar, Pune, Maharashtra",
+        "pincode": "411005",
+        "careOf": "S/o Mahadev Patil",
+        "photo": "base64string_placeholder"
+      },
+      "message": "Aadhaar details successfully verified",
+      "aadhaarNumber": "672843190257"
+    },
+    {
+      "status": "VALID",
+      "referenceId": "txn_719364825017",
+      "data": {
+        "fullName": "Priya Nair",
+        "dob": "1990-03-29",
+        "gender": "F",
+        "address": "Flat 501, Rose Residency, Kakkanad, Kochi, Kerala",
+        "pincode": "682030",
+        "careOf": "D/o Anand Nair",
+        "photo": "base64string_placeholder"
+      },
+      "message": "Aadhaar details successfully verified",
+      "aadhaarNumber": "719364825017"
+    },
+    {
+      "status": "VALID",
+      "referenceId": "txn_450219678304",
+      "data": {
+        "fullName": "Amit Verma",
+        "dob": "1987-07-18",
+        "gender": "M",
+        "address": "Gali No. 5, Shastri Nagar, New Delhi",
+        "pincode": "110052",
+        "careOf": "S/o Prakash Verma",
+        "photo": "base64string_placeholder"
+      },
+      "message": "Aadhaar details successfully verified",
+      "aadhaarNumber": "450219678304"
+    }
+  ]
+}

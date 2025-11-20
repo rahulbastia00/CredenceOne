@@ -1,0 +1,29 @@
+{
+  "cibil-varify": [
+    {
+      "aadhaarNumber": "836491205374",
+      "panNumber": "ELWPN6407J",
+      "customerName": "Rajesh Kumar"
+    },
+    {
+      "aadhaarNumber": "450219678304",
+      "panNumber": "AJPCE1298F",
+      "customerName": "Amit Verma"
+    },
+    {
+      "aadhaarNumber": "719364825017",
+      "panNumber": "BQTPD4592K",
+      "customerName": "Priya Nair"
+    },
+    {
+      "aadhaarNumber": "672843190257",
+      "panNumber": "CTXPS7841M",
+      "customerName": "Suresh Patil"
+    },
+    {
+      "aadhaarNumber": "594720183645",
+      "panNumber": "DVKPR9153H",
+      "customerName": "Ananya Sharma"
+    }
+  ]
+}

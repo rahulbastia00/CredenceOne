@@ -1,0 +1,64 @@
+{
+  "panVerificationRecords": [
+    {
+      "success": true,
+      "pan": "AJPCE1298F",
+      "registeredName": "Amit Verma",
+      "nameMatch": true,
+      "dobMatch": true,
+      "status": "valid",
+      "category": "Individual",
+      "aadhaarSeedingStatus": "y",
+      "message": "PAN successfully verified and details match",
+      "dob": "1987-07-18"
+    },
+    {
+      "success": true,
+      "pan": "BQTPD4592K",
+      "registeredName": "Priya Nair",
+      "nameMatch": true,
+      "dobMatch": true,
+      "status": "valid",
+      "category": "Individual",
+      "aadhaarSeedingStatus": "y",
+      "message": "PAN successfully verified and details match",
+      "dob": "1990-03-29"
+    },
+    {
+      "success": true,
+      "pan": "CTXPS7841M",
+      "registeredName": "Suresh Patil",
+      "nameMatch": true,
+      "dobMatch": true,
+      "status": "valid",
+      "category": "Individual",
+      "aadhaarSeedingStatus": "y",
+      "message": "PAN successfully verified and details match",
+      "dob": "1978-11-03"
+    },
+    {
+      "success": true,
+      "pan": "DVKPR9153H",
+      "registeredName": "Ananya Sharma",
+      "nameMatch": true,
+      "dobMatch": true,
+      "status": "valid",
+      "category": "Individual",
+      "aadhaarSeedingStatus": "y",
+      "message": "PAN successfully verified and details match",
+      "dob": "1992-09-15"
+    },
+    {
+      "success": true,
+      "pan": "ELWPN6407J",
+      "registeredName": "Rajesh Kumar",
+      "nameMatch": true,
+      "dobMatch": true,
+      "status": "valid",
+      "category": "Individual",
+      "aadhaarSeedingStatus": "y",
+      "message": "PAN successfully verified and details match",
+      "dob": "1984-02-11"
+    }
+  ]
+}

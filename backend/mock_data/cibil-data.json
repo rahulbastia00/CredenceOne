@@ -1,0 +1,79 @@
+{
+  "cibilReports": [
+    {
+      "status": "SUCCESS",
+      "aadhaarNumber": "836491205374",
+      "panNumber": "ELWPN6407J",
+      "customerName": "Rajesh Kumar",
+      "score": 780,
+      "scoreStatus": "Good",
+      "historySummary": {
+        "totalLoansActive": 2,
+        "overdueAccounts": 0,
+        "lastPaymentDate": "2025-10-01"
+      },
+      "message": "Credit report fetched successfully",
+      "reportDetails": "link/to/mock_report_rajesh.pdf"
+    },
+    {
+      "status": "SUCCESS",
+      "aadhaarNumber": "450219678304",
+      "panNumber": "AJPCE1298F",
+      "customerName": "Amit Verma",
+      "score": 720,
+      "scoreStatus": "Fair",
+      "historySummary": {
+        "totalLoansActive": 1,
+        "overdueAccounts": 0,
+        "lastPaymentDate": "2025-08-14"
+      },
+      "message": "Credit report fetched successfully",
+      "reportDetails": "link/to/mock_report_amit.pdf"
+    },
+    {
+      "status": "SUCCESS",
+      "aadhaarNumber": "719364825017",
+      "panNumber": "BQTPD4592K",
+      "customerName": "Priya Nair",
+      "score": 805,
+      "scoreStatus": "Very Good",
+      "historySummary": {
+        "totalLoansActive": 3,
+        "overdueAccounts": 0,
+        "lastPaymentDate": "2025-09-27"
+      },
+      "message": "Credit report fetched successfully",
+      "reportDetails": "link/to/mock_report_priya.pdf"
+    },
+    {
+      "status": "SUCCESS",
+      "aadhaarNumber": "672843190257",
+      "panNumber": "CTXPS7841M",
+      "customerName": "Suresh Patil",
+      "score": 665,
+      "scoreStatus": "Average",
+      "historySummary": {
+        "totalLoansActive": 4,
+        "overdueAccounts": 1,
+        "lastPaymentDate": "2025-07-05"
+      },
+      "message": "Credit report fetched with caution - overdue account found",
+      "reportDetails": "link/to/mock_report_suresh.pdf"
+    },
+    {
+      "status": "SUCCESS",
+      "aadhaarNumber": "594720183645",
+      "panNumber": "DVKPR9153H",
+      "customerName": "Ananya Sharma",
+      "score": 840,
+      "scoreStatus": "Excellent",
+      "historySummary": {
+        "totalLoansActive": 1,
+        "overdueAccounts": 0,
+        "lastPaymentDate": "2025-11-10"
+      },
+      "message": "Credit report fetched successfully",
+      "reportDetails": "link/to/mock_report_ananya.pdf"
+    }
+  ]
+}
