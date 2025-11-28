@@ -14,10 +14,9 @@ app = FastAPI(
 )
 
 # --- CONFIGURING PATHS ---
-# This gets the directory where THIS file (main.py) is located: .../backend/app
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# This goes up one level to 'backend' and then into 'mock_data'
 MOCK_DATA_DIR = os.path.join(BASE_DIR, "..", "mock_data")
+
 
 def load_mock_json(filename: str):
     """Helper to read JSON files from the sibling mock_data directory."""
@@ -30,52 +29,88 @@ def load_mock_json(filename: str):
     except json.JSONDecodeError:
         raise HTTPException(status_code=500, detail=f"Error decoding '{filename}'. Check JSON format.")
 
-# --- KYC ENDPOINTS (Used by Verification Agent) ---
+
+# -------------------- KYC ENDPOINTS --------------------
 
 @app.post("/api/verifyAadhaar")
 async def verify_aadhaar(data: Dict[str, Any]):
     """
-    Simulates Aadhaar verification by reading from mock_data/adhar-data.json
+    Verify Aadhaar by returning only the matched record from adhar-data.json.
+    Expected input: { "aadhaarNumber": "594720183645" }
     """
-    # Note: Using the exact spelling from your screenshot
-    return load_mock_json("adhar-data.json")
+    aadhaar_number = data.get("aadhaarNumber")
+
+    if not aadhaar_number:
+        raise HTTPException(status_code=400, detail="aadhaarNumber is required")
+
+    json_data = load_mock_json("adhar-data.json")
+
+    # Loop through JSON records
+    for record in json_data.get("records", []):
+        if record.get("aadhaarNumber") == aadhaar_number:
+            return record  # <-- RETURNS ONLY THE MATCHED PERSON
+
+    raise HTTPException(status_code=404, detail="No Aadhaar record found for the provided number")
+
 
 @app.post("/api/verifyPan")
 async def verify_pan(data: Dict[str, Any]):
-    """
-    Simulates PAN verification by reading from mock_data/pan-data.json
-    """
-    # Note: Using the exact spelling from your screenshot
-    return load_mock_json("pan-data.json")
+    pan_number = data.get("panNumber")
 
-# --- CREDIT BUREAU ENDPOINT (Used by Underwriting Agent) ---
+    if not pan_number:
+        raise HTTPException(status_code=400, detail="panNumber is required")
+
+    json_data = load_mock_json("pan-data.json")
+
+    # Check inside panVerificationRecords array
+    for record in json_data.get("panVerificationRecords", []):
+        if record.get("pan") == pan_number:
+            return record
+
+    raise HTTPException(status_code=404, detail="PAN record not found")
+
+
+
+# -------------------- CREDIT REPORT CIBIL ENDPOINT --------------------
 
 @app.post("/api/fetchCreditReport")
 async def fetch_credit_report(data: Dict[str, Any]):
     """
-    Simulates CIBIL Score fetch by reading from mock_data/cibil-data.json
+    Fetch CIBIL report by PAN number from cibil-data.json.
+    Expected input: { "panNumber": "AJPCE1298F" }
     """
-    # Note: Using the exact spelling from your screenshot
-    return load_mock_json("cibil-data.json")
+    pan_number = data.get("panNumber")
+
+    if not pan_number:
+        raise HTTPException(status_code=400, detail="panNumber is required")
+
+    json_data = load_mock_json("cibil-data.json")
+
+    # Loop through cibilReports array
+    for record in json_data.get("cibilReports", []):
+        if record.get("panNumber") == pan_number:
+            return record
+
+    raise HTTPException(status_code=404, detail="No CIBIL report found for the provided PAN number")
 
 
-# --- Sanction Letter Test Endpoint ---
+# --- SANCTION LETTER TEST ---
 @app.post("/api/testSanctionLetter")
 def test_sanction_letter_generation():
-    """Test endpoint to generate a mock sanction letter."""
     try:
         customer_name = "Rahul Kumar Bastia"
         loan_amount = 450000.00
         tenure = 36
         rate = 11.0
-        
+
         file_path = generate_sanction_letter_pdf(customer_name, loan_amount, tenure, rate)
         return FileResponse(path=file_path, filename=os.path.basename(file_path), media_type='application/pdf')
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Sanction Letter Generation Failed: {e}")
 
-# --- Health Check ---
+
+# --- HEALTH CHECK ---
 @app.get("/")
 def read_root():
     return {"status": "ok", "message": "Mock API is running with JSON integration"}
